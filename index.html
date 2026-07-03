@@ -50,98 +50,17 @@
       pointer-events: none;
     }
     .hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    @keyframes orbit {
-      from { transform: translate(-50%, -50%) rotate(0deg); }
-      to { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-    @keyframes orbitReverse {
-      from { transform: translate(-50%, -50%) rotate(0deg); }
-      to { transform: translate(-50%, -50%) rotate(-360deg); }
-    }
-    @keyframes shadowSpin {
-      0% { transform: translate(0, 8px); opacity: 0.25; }
-      25% { transform: translate(6px, 0); opacity: 0.2; }
-      50% { transform: translate(0, -4px); opacity: 0.15; }
-      75% { transform: translate(-6px, 0); opacity: 0.2; }
-      100% { transform: translate(0, 8px); opacity: 0.25; }
-    }
-    .avatar-wrapper {
-      position: relative;
-      display: inline-block;
-      margin: 0 auto 30px;
-      width: 140px;
-      height: 140px;
-    }
-    /* Rotating ring 1 */
-    .avatar-wrapper .ring {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      border: 2px dashed rgba(201,168,76,0.5);
-      pointer-events: none;
-      animation: orbit 3s linear infinite;
-    }
-    .avatar-wrapper .ring:nth-child(2) {
-      width: 140px; height: 140px;
-      border-style: dashed;
-      animation: orbitReverse 4s linear infinite;
-    }
-    .avatar-wrapper .ring:nth-child(3) {
-      width: 125px; height: 125px;
-      border-style: dotted;
-      border-color: rgba(255,255,255,0.4);
-      animation: orbit 2.5s linear infinite;
-    }
-    /* Rotating ring 4 - solid arc */
-    .avatar-wrapper .ring:nth-child(4) {
-      width: 148px; height: 148px;
-      border-style: solid;
-      border-color: transparent rgba(201,168,76,0.5) transparent transparent;
-      animation: orbitReverse 3.5s linear infinite;
-    }
-    .avatar-wrapper::before {
-      content: "";
-      position: absolute;
-      bottom: -8px; left: 50%;
-      width: 60px; height: 10px;
-      margin-left: -30px;
-      background: radial-gradient(ellipse, rgba(0,0,0,0.2) 0%, transparent 70%);
-      border-radius: 50%;
-      animation: shadowSpin 1.5s linear infinite;
-    }
-    .avatar-wrapper::after {
-      content: "⭐";
-      position: absolute;
-      top: -10px; right: -8px;
-      font-size: 18px;
-      pointer-events: none;
-      animation: orbit 6s linear infinite;
-      transform-origin: 78px 78px;
-    }
     .hero-avatar {
       width: 110px; height: 110px; border-radius: 50%;
       border: 3px solid var(--accent);
       background: var(--accent-light);
+      margin: 0 auto 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       object-fit: cover;
       object-position: center;
-      animation: spin 2s linear infinite;
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
     }
-    .hero-avatar:hover {
-      animation: spin 0.6s linear infinite;
-    }
-    /* End avatar styles */}
 
     .hero h1 { font-size: 36px; font-weight: 700; letter-spacing: 2px; margin-bottom: 6px; }
     .hero .en-name { font-size: 16px; opacity: 0.7; font-weight: 400; margin-bottom: 12px; }
@@ -457,13 +376,7 @@
   <!-- ═══════════ HERO ═══════════ -->
   <header class="hero">
     <div class="hero-content">
-      <div class="avatar-wrapper">
-        <span class="ring"></span>
-        <span class="ring"></span>
-        <span class="ring"></span>
-        <span class="ring"></span>
-        <img class="hero-avatar" src="assets/avatar.png" alt="周强">
-      </div>
+      <img class="hero-avatar" src="assets/avatar.png" alt="周强">
       <h1>周 强</h1>
       <div class="en-name">Qiang Zhou</div>
       <div class="title-line">教授 · 博士生导师</div>
