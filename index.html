@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="周强 — 南昌大学工程建设学院教授、博士生导师个人学术主页">
+  <title>周强 | 南昌大学 工程建设学院</title>
+  <style>
+    :root {
+      --primary: #1a3a5c;
+      --primary-light: #2c5f8a;
+      --accent: #c9a84c;
+      --accent-light: #e8d49e;
+      --bg: #fafaf9;
+      --bg-white: #ffffff;
+      --text: #2d2d2d;
+      --text-light: #5a5a5a;
+      --text-muted: #888888;
+      --border: #e5e5e5;
+      --shadow: 0 2px 16px rgba(0,0,0,0.06);
+      --radius: 8px;
+      --max-width: 960px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* ── Header / Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: #fff;
+      padding: 60px 20px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle at 30% 70%, rgba(201,168,76,0.15) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .hero-avatar {
+      width: 110px; height: 110px; border-radius: 50%;
+      border: 3px solid var(--accent);
+      background: var(--accent-light);
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero h1 { font-size: 36px; font-weight: 700; letter-spacing: 2px; margin-bottom: 6px; }
+    .hero .en-name { font-size: 16px; opacity: 0.7; font-weight: 400; margin-bottom: 12px; }
+    .hero .title-line { font-size: 17px; opacity: 0.9; margin-bottom: 6px; }
+    .hero .affiliation { font-size: 15px; opacity: 0.75; }
+
+    /* ── Navigation ── */
+    nav {
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    nav .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+    }
+    nav a {
+      display: block;
+      padding: 14px 22px;
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 14px;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    nav a:hover, nav a.active {
+      color: var(--primary);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── Main Layout ── */
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+    section { padding: 50px 0; }
+    section:nth-child(even) { background: var(--bg-white); }
+
+    /* ── Section Headings ── */
+    .section-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-heading h2 {
+      font-size: 28px;
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 1px;
+      display: inline-block;
+      position: relative;
+    }
+    .section-heading h2::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--accent);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+    .section-heading .en-sub {
+      display: block;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ── About Section ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+
+    .info-card, .intro-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .info-card h3, .intro-card h3 {
+      font-size: 18px;
+      color: var(--primary);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--accent-light);
+    }
+    .info-item {
+      display: flex;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+    .info-item .label {
+      color: var(--text-muted);
+      min-width: 72px;
+      flex-shrink: 0;
+    }
+    .info-item .value { color: var(--text); }
+    .info-item .value a { color: var(--primary-light); text-decoration: none; }
+    .info-item .value a:hover { text-decoration: underline; }
+
+    .intro-card p { margin-bottom: 12px; text-align: justify; }
+
+    /* ── Research Section ── */
+    .research-area {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s;
+    }
+    .research-area:hover { transform: translateX(4px); }
+    .research-area h3 {
+      font-size: 18px;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .research-area ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .research-area li {
+      padding: 4px 0 4px 20px;
+      position: relative;
+      font-size: 14px;
+      color: var(--text-light);
+    }
+    .research-area li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 12px;
+    }
+
+    /* ── Stats Bar ── */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      padding: 30px 0;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ── Achievements / Cards ── */
+    .card-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .achievement-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .achievement-card h4 {
+      font-size: 16px;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .achievement-card p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ── Timeline for Education ── */
+    .timeline { position: relative; padding-left: 30px; }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--accent-light);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 24px;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -24px;
+      top: 6px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .timeline-year {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .timeline-content {
+      font-size: 15px;
+    }
+    .timeline-content strong { color: var(--primary); }
+
+    /* ── Contact ── */
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 24px;
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s;
+    }
+    .contact-item:hover { transform: translateY(-2px); }
+    .contact-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .contact-text {
+      font-size: 14px;
+      color: var(--text);
+    }
+    .contact-text a { color: var(--primary-light); text-decoration: none; }
+    .contact-text a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--primary);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 13px;
+    }
+    footer a { color: var(--accent-light); text-decoration: none; }
+
+    /* ── Smooth scroll ── */
+    html { scroll-behavior: smooth; }
+
+    /* ── Back to top ── */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 44px; height: 44px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s;
+      pointer-events: none;
+      z-index: 200;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .back-to-top:hover { background: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <header class="hero">
+    <div class="hero-content">
+      <img class="hero-avatar" src="assets/avatar.png" alt="周强">
+      <h1>周 强</h1>
+      <div class="en-name">Qiang Zhou</div>
+      <div class="title-line">教授 · 博士生导师</div>
+      <div class="affiliation">南昌大学 工程建设学院</div>
+    </div>
+  </header>
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#about">个人简介</a>
+      <a href="#education">教育背景</a>
+      <a href="#research">研究方向</a>
+      <a href="#achievements">学术成果</a>
+      <a href="#teaching">教学情况</a>
+      <a href="#contact">联系方式</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ═══════════ ABOUT ═══════════ -->
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <h2>个人简介</h2>
+          <span class="en-sub">About Me</span>
+        </div>
+
+        <div class="about-grid">
+          <!-- Info Card -->
+          <div class="info-card">
+            <h3>基本信息</h3>
+            <div class="info-item"><span class="label">姓名</span><span class="value">周强</span></div>
+            <div class="info-item"><span class="label">性别</span><span class="value">男</span></div>
+            <div class="info-item"><span class="label">职称</span><span class="value">教授（正高级）</span></div>
+            <div class="info-item"><span class="label">学位</span><span class="value">博士</span></div>
+            <div class="info-item"><span class="label">岗位</span><span class="value">教学科研岗 · 专技岗4级</span></div>
+            <div class="info-item"><span class="label">单位</span><span class="value">工程建设学院</span></div>
+            <div class="info-item"><span class="label">地址</span><span class="value">基础实验大楼</span></div>
+            <div class="info-item">
+              <span class="label">邮箱</span>
+              <span class="value"><a href="mailto:zhouqiang@ncu.edu.cn">zhouqiang@ncu.edu.cn</a></span>
+            </div>
+          </div>
+
+          <!-- Intro Card -->
+          <div class="intro-card">
+            <h3>学术简介</h3>
+            <p>
+              周强，教授，博士生导师，江西省力学学会理事，江西省课程思政教学名师，加拿大西安大略大学访问学者。
+            </p>
+            <p>
+              长期从事土木工程与工程力学专业相关教学和科研工作，在建筑结构的抗震性能分析及评估方法、抗震设计方法、抗震试验、地震现场灾情模拟技术、房屋安全鉴定及加固方法等方面取得一定成果，形成了以村镇房屋抗震研究为特色的学科方向和科研团队。
+            </p>
+            <p>
+              担任多类国家级及省部级项目涵评专家，以及 <em>Structures</em>、<em>Engineering Structures</em> 等国内外学术期刊审稿专家，指导研究生30余人。
+            </p>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-bar">
+          <div class="stat-item">
+            <div class="stat-num">50+</div>
+            <div class="stat-label">学术论文</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">5</div>
+            <div class="stat-label">授权专利</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">30+</div>
+            <div class="stat-label">指导研究生</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">授课质量奖</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ EDUCATION ═══════════ -->
+    <section id="education">
+      <div class="container">
+        <div class="section-heading">
+          <h2>教育背景</h2>
+          <span class="en-sub">Education</span>
+        </div>
+
+        <div class="timeline" style="max-width: 600px; margin: 0 auto;">
+          <div class="timeline-item">
+            <div class="timeline-year">访问学者</div>
+            <div class="timeline-content">
+              <strong>加拿大西安大略大学</strong> (Western University)<br>
+              国家公派访问学者
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">博士</div>
+            <div class="timeline-content">
+              <strong>博士研究生</strong><br>
+              结构工程 / 工程力学方向
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">现任</div>
+            <div class="timeline-content">
+              <strong>南昌大学 工程建设学院</strong><br>
+              教授 · 博士生导师
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ RESEARCH ═══════════ -->
+    <section id="research">
+      <div class="container">
+        <div class="section-heading">
+          <h2>研究方向</h2>
+          <span class="en-sub">Research Interests</span>
+        </div>
+
+        <div class="research-area">
+          <h3>方向一：结构震害机理及抗震性能分析</h3>
+          <ul>
+            <li>结构震害总结与分析</li>
+            <li>结构震损评价方法研究</li>
+            <li>结构震害机理研究</li>
+            <li>结构抗震性能分析方法研究</li>
+            <li>结构抗震性能试验研究</li>
+          </ul>
+        </div>
+
+        <div class="research-area">
+          <h3>方向二：工程结构抗震试验研究</h3>
+          <ul>
+            <li>材料力学性能试验研究</li>
+            <li>构件力学性能试验研究</li>
+            <li>构件拟静力试验研究</li>
+            <li>结构振动台试验</li>
+            <li>抗震试验方法及技术研究</li>
+          </ul>
+        </div>
+
+        <div class="research-area">
+          <h3>方向三：结构抗震性能评估方法研究</h3>
+          <ul>
+            <li>结构地震易损性分析方法研究</li>
+            <li>加固结构抗震性能评估方法研究</li>
+            <li>结构震害预测方法研究</li>
+            <li>结构抗震韧性评价方法研究</li>
+            <li>基于AI的结构抗震性能评估新方法研究</li>
+          </ul>
+        </div>
+
+        <div class="research-area">
+          <h3>方向四：结构安全鉴定及抗震加固技术研究</h3>
+          <ul>
+            <li>结构安全鉴定及加固技术</li>
+            <li>结构抗震加固方法研究</li>
+            <li>新型结构加固技术研发</li>
+            <li>加固结构抗震性能评估</li>
+            <li>结构抗震加固设计理论</li>
+            <li>新型抗震加固方法的规范与应用</li>
+          </ul>
+        </div>
+
+        <div class="research-area">
+          <h3>方向五：新技术在结构抗震中的应用研究</h3>
+          <ul>
+            <li>基于机器学习的结构损伤识别研究</li>
+            <li>基于机器学习的结构抗震性能评估方法研究</li>
+            <li>地震现场灾情场景模拟技术研究</li>
+            <li>结构数值模拟方法研究</li>
+            <li>人工智能与数值模拟技术的联合应用研究</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ ACHIEVEMENTS ═══════════ -->
+    <section id="achievements">
+      <div class="container">
+        <div class="section-heading">
+          <h2>学术成果与荣誉</h2>
+          <span class="en-sub">Achievements &amp; Honors</span>
+        </div>
+
+        <div class="card-list">
+          <div class="achievement-card">
+            <h4>学术论文</h4>
+            <p>累计发表学术论文50余篇，涵盖结构抗震、地震易损性分析、结构加固等领域。</p>
+          </div>
+          <div class="achievement-card">
+            <h4>专利成果</h4>
+            <p>授权专利5项，涉及新型抗震加固技术及试验装置研发。</p>
+          </div>
+          <div class="achievement-card">
+            <h4>科研项目</h4>
+            <p>主持国家及省部级项目多项，聚焦村镇房屋抗震研究与工程应用。</p>
+          </div>
+          <div class="achievement-card">
+            <h4>学术服务</h4>
+            <p>担任多类国家级及省部级项目涵评专家；<em>Structures</em>、<em>Engineering Structures</em> 等国际期刊审稿人。</p>
+          </div>
+          <div class="achievement-card">
+            <h4>学会任职</h4>
+            <p>江西省力学学会理事。</p>
+          </div>
+          <div class="achievement-card">
+            <h4>荣誉称号</h4>
+            <p>江西省课程思政教学名师。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ TEACHING ═══════════ -->
+    <section id="teaching">
+      <div class="container">
+        <div class="section-heading">
+          <h2>教学情况</h2>
+          <span class="en-sub">Teaching</span>
+        </div>
+
+        <div class="card-list">
+          <div class="achievement-card">
+            <h4>教改课题</h4>
+            <p>主持完成省级及校级教改课题6项，发表教改论文4篇。</p>
+          </div>
+          <div class="achievement-card">
+            <h4>精品课程</h4>
+            <p>主讲省级精品课程2门，主编教材1部。</p>
+          </div>
+          <div class="achievement-card">
+            <h4>授课质量</h4>
+            <p>获南昌大学授课质量奖10余次。</p>
+          </div>
+          <div class="achievement-card">
+            <h4>教学荣誉</h4>
+            <p>2021年 中国力学学会全国徐芝纶力学优秀教师奖。</p>
+          </div>
+          <div class="achievement-card">
+            <h4>竞赛指导</h4>
+            <p>获全国周培源大学生力学竞赛优秀指导教师等奖励多项，指导学生获各类国家级和省部级竞赛奖数十项。</p>
+          </div>
+          <div class="achievement-card">
+            <h4>研究生培养</h4>
+            <p>累计指导研究生30余人。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CONTACT ═══════════ -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <h2>联系方式</h2>
+          <span class="en-sub">Contact</span>
+        </div>
+
+        <div class="contact-list">
+          <div class="contact-item">
+            <div class="contact-icon">✉</div>
+            <div class="contact-text">
+              <a href="mailto:zhouqiang@ncu.edu.cn">zhouqiang@ncu.edu.cn</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🏫</div>
+            <div class="contact-text">
+              南昌大学 工程建设学院<br>基础实验大楼
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🌐</div>
+            <div class="contact-text">
+              <a href="https://teacher.ncu.edu.cn/publish/091909/" target="_blank" rel="noopener">官方教师主页</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer>
+    <p>&copy; 2026 周强 · 南昌大学工程建设学院</p>
+    <p style="margin-top: 6px;">
+      <a href="https://teacher.ncu.edu.cn/publish/091909/" target="_blank" rel="noopener">官方主页</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:zhouqiang@ncu.edu.cn">联系邮箱</a>
+    </p>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" title="返回顶部">↑</button>
+
+  <script>
+    // ── Sticky Nav Active State ──
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        const top = s.offsetTop - 80;
+        if (window.scrollY >= top) current = s.getAttribute('id');
+      });
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+
+      // Back to top
+      const btn = document.getElementById('backToTop');
+      btn.classList.toggle('visible', window.scrollY > 400);
+    });
+
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
